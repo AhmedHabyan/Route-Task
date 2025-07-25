@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RouteTask</string>
+    <string name="null_content_description">null</string>
 </resources>
