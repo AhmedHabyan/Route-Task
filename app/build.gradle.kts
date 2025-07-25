@@ -53,7 +53,12 @@ dependencies {
     implementation(libs.converter.gson)
     implementation(libs.okhttp)
 
+    //Logging interceptor
+    implementation(libs.logging.interceptor)
+
+
     //Hilt with Ksp
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
-}
+
+   }
