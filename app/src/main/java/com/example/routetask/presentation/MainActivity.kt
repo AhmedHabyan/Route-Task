@@ -35,9 +35,9 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        viewModel.getPhotos()
-        initRecyclerView()
 
+        initRecyclerView()
+        viewModel.getPhotos()
         observeData()
 
 
