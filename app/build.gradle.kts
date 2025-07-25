@@ -71,4 +71,7 @@ dependencies {
 
     //glide
     implementation(libs.glide)
+
+    //coroutines
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
 }

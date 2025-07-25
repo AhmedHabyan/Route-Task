@@ -1,5 +1,6 @@
 package com.example.routetask.data.Entity
 
+import com.example.routetask.domain.model.Photo
 import com.google.gson.annotations.SerializedName
 
 data class PhotoResponse(
@@ -18,4 +19,13 @@ data class PhotoResponse(
 
 	@field:SerializedName("total_results")
 	val totalResults: Int? = null
-)
+){
+	fun toPhoto():Photo{
+		return Photo(
+			photoUrlList = photos?.filterNotNull()?.mapNotNull {
+				it.src?.original
+			}
+		)
+
+	}
+}
