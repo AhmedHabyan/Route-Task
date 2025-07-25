@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-photoAdapter= PhotoAdapter(Photo())
+
         viewModel.getPhotos()
         initRecyclerView()
 
@@ -62,6 +62,7 @@ photoAdapter= PhotoAdapter(Photo())
     }
 
     private fun initRecyclerView() {
+        photoAdapter= PhotoAdapter(Photo())
         binding.rvPhotos.apply {
             adapter= photoAdapter
             layoutManager = StaggeredGridLayoutManager(2,RecyclerView.VERTICAL)
