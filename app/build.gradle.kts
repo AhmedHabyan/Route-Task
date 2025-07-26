@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     id("com.google.devtools.ksp")
     id("com.google.dagger.hilt.android")
+    id("kotlin-kapt") // For KAPT
 }
 
 android {
@@ -67,11 +68,17 @@ dependencies {
 
 
     //splash screen api
-    implementation("androidx.core:core-splashscreen:1.0.1")
+    implementation(libs.androidx.core.splashscreen)
 
     //glide
     implementation(libs.glide)
 
     //coroutines
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
+
+    //room database
+    implementation(libs.androidx.room.runtime)
+//    ksp(libs.androidx.room.compiler)
+    kapt("androidx.room:room-compiler:2.7.2")
+    annotationProcessor(libs.androidx.room.compiler)
 }

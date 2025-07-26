@@ -1,5 +1,6 @@
 package com.example.routetask.data.di
 
+import com.example.routetask.data.database.AppDatabase
 import com.example.routetask.data.datasource.LocalDataSourceImpl
 import com.example.routetask.data.datasource.RemoteDataSourceImpl
 import com.example.routetask.data.webservice.WebService
@@ -24,7 +25,7 @@ object DataSourceModule {
 
     @Provides
     @Singleton
-    fun provideLocalDataSource(webService: WebService): LocalDataSource {
-        return LocalDataSourceImpl(webService)
+    fun provideLocalDataSource(appDatabase: AppDatabase): LocalDataSource {
+        return LocalDataSourceImpl(appDatabase)
     }
 }

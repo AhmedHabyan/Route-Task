@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 class RemoteDataSourceImpl @Inject constructor(
     private val webservice:WebService
 ): RemoteDataSource {
-    override suspend fun getPhotos(): Flow<ApiResult<Photo>> {
-       return safeCallApi { webservice.getPhotos().toPhoto() }
+    override suspend fun getPhotos(): Photo {
+       return webservice.getPhotos().toPhoto()
     }
 }
